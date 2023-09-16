@@ -3,7 +3,7 @@ class DFS(Graph,Stack):
     def __init__(self, v, a, vi):
         super().__init__(v, a) #herda vertices e arestas do grafo
         self.vi= vi #vétice que começaremos a busca
-        self.marcados = [] *inicia vetor de marcação
+        self.marcados = [] #inicia vetor de marcação
         self.s = Stack() #cria pilha vazia
         self.s.push(self.vi)  #adiciona a raiz na fila
         self.contruir_lista() #usa matriz de adjacência para verificar os vizinhos quando for adicionar na pilha
