@@ -58,9 +58,8 @@ class Graph:
         print("Grau médio:", graumed)
         print("Grau mediano:",0)
     
-    def saidas(self): #talvez tenha que criar outra classe pra saída
+    def mostra_arestas():
+         print("Número de arestas:", len(self.a))
+
+    def mostra_vertices():
         print('Número de vértices', self.v)
-        print("Número de arestas:", len(self.a))
-        self.grau()
-        self.mostra_lista
-        self.mostra_matriz
