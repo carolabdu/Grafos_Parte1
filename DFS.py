@@ -6,14 +6,19 @@ class DFS(Graph,Stack):
         self.marcados = []
         self.s = Stack()
         self.s.push(self.vi)
+        self.contruir_lista()
 
-    def algoritmo():
-        while self.s != []:
+    def algoritmo(self):
+        while self.s.isEmpty()==False :
             u = self.s.peek() #pega vértice no topo da lista 
-            self.s.pop() #remove u da pilha 
+            self.s.pop() #remover u da pilha 
             if u not in self.marcados: # (implemetar para ver se tá na lista): 
                 self.marcados += [u]
-                #Para cada aresta (u,v) incidente a u
-                #Adicionar v em P // no topo
+                for k in self.lista[u-1]:
+                    self.s.push(k)
 
+    
+    def mostra_marcados(self):
+        self.algoritmo()
+        print(self.marcados)
 
