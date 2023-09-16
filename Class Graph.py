@@ -32,7 +32,7 @@ class Graph:
         self.contruir_lista()  
         print (self.lista) 
 
-def grau (self):
+    def grau (self):
         self.contruir_lista()
         graus= [] #contruir lista com o grau de cada vértice
         for i in range(self.v):
