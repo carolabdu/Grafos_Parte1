@@ -10,10 +10,10 @@ class DFS(Graph,Stack):
     def algoritmo():
         while self.s != []:
             u = self.s.peek() #pega vértice no topo da lista 
-            self.s.pop()
+            self.s.pop() #remove u da pilha 
             if u not in self.marcados: # (implemetar para ver se tá na lista): 
                 self.marcados += [u]
                 #Para cada aresta (u,v) incidente a u
                 #Adicionar v em P // no topo
 
-DFS(nodes,edges).motra_v()
+
