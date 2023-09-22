@@ -65,4 +65,31 @@ class Graph_m: #grafo em matriz
         print('marcados:',self.marcados)
         print('pais:', self.pai)
         print('niveis:', self.nivel)    
+
+    def BFS(self,vi):
+        self.marked = [] #list with the nodes that are being or has already been explored
+        self.Q = Queue() #Creates an empty Queue
+        pai = np.zeros([self.v], dtype=int) #inicia vetor com os pais
+        nivel = np.zeros([self.v],dtype=int) #inicia vetor dos níveis
+        pai[vi-1] = 0 #indica que não tem pai pois é raiz
     
+        self.marked.append(vi) #Marks the initial node(where we start the search)
+        self.Q.add(vi) #Adds the firts node in the FIRTS POSITION of the Queue
+        pai[vi-1] = 0 #indica que é raiz 
+        while self.Q.is_empty() == False: #The search continues until the Queue is empty, when all the nodes have been explored
+            v = self.Q.pop() #Removes the last node of the Queue, which is the older one and atributes to variable v
+            for w in range(self.v): #para cada vizinho de v
+                    vizinho = self.matriz[v-1][w] #verificar se elemento da matriz é 1
+                    if vizinho ==1: #ou seja se é vizinho de fato #Explores all of v's neighbors and mark the ones who hasn't been explores
+                        if w+1 not in self.marked: 
+                            pai[w]= v #if w is not marked, it means the node that discovered it was v
+                            nivel[w] = nivel[v-1]+1 #hanges the level of w
+                            self.marked.append(w+1) #Marks w if it's not been discovered yet
+                            self.Q.add(w+1) #Adds w to the first position of the Queue
+
+        self.maxlevel = np.argmax(nivel)
+        
+        print('marcados:',self.marked)
+        print('pais:', pai)
+        print('niveis:', nivel) 
+        print('maxleel:', self.maxlevel)  
