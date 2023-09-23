@@ -41,6 +41,11 @@ class Graph_m: #grafo em matriz
         grau_med = (soma_graus/self.v)
         print(grau_med)
 
+    def mediano(self):
+        graus = np.sum(self.matriz, axis= 0)
+        mediano = np.median(graus)
+        return int(mediano)
+
 
     def DFS(self,vi):
         self.marcados = [] #inicia vetor de marcação
