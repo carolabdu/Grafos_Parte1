@@ -67,9 +67,8 @@ class Graph_m: #grafo em matriz
                         if self.marcados[k]==0:  #se k ainda não foi marcado
                             pai[k] = u   #escrevre que u descobriu (vai mudando ao longo do algoritmo)
                             nivel[k] = nivel[u-1] + 1  #verifica o nível do pai de k e soma 1
-        print('marcados:',self.marcados)
-        print('pais:', pai)
-        print('niveis:', nivel)   
+        self.tree = [pai, nivel]
+        return (self.tree)
 
     def BFS(self,vi):
         self.marked = np.zeros(self.v,dtype=int) #list with the nodes that are being or has already been explored
