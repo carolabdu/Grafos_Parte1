@@ -95,6 +95,13 @@ class Graph_m: #grafo em matriz
         self.BFStree = [pai, nivel,self.maxlevel]
         return (self.BFStree)
 
+    def mostra_DFS(self,vi):
+        self.DFS(vi)
+        print (self.DFStree)
+
+    def mostra_BFS(self,vi):
+        self.BFS(vi)
+        print (self.BFStree)
 
     def distancia(self, v1, v2):
         self.BFS(v1)
