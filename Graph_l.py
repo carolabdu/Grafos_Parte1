@@ -63,9 +63,9 @@ class Graph_l:
                     if self.marcados[k-1]==0:  #se k ainda não foi marcado
                         pai[k-1] = u   #escrevre que u descobriu (vai mudando ao longo do algoritmo)
                         nivel[k-1] = nivel[u-1] + 1  #verifica o nível do pai de k e soma 1
-        print('marcados:',self.marcados)
-        print('pais:', pai)
-        print('niveis:', nivel)  
+        
+        self.tree = [pai, nivel]
+        return (self.tree)  
 
     def BFS(self,vi):
         self.marked = np.zeros(self.v,dtype=int) #list with the nodes that are being or has already been explored
@@ -87,7 +87,12 @@ class Graph_l:
 
         self.maxlevel = np.argmax(nivel)
 
-        print('marcados:',self.marked)
-        print('pais:', pai)
-        print('niveis:', nivel) 
-        print('maxleel:', self.maxlevel)  
+        self.tree = [pai, nivel,self.maxlevel]
+        return (self.tree)
+
+
+    def distancia(self, v1, v2):
+        self.BFS(v1)
+        distancia = self.tree[1][v2-1]
+        print(distancia)
+ 
