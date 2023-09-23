@@ -67,8 +67,8 @@ class Graph_m: #grafo em matriz
                         if self.marcados[k]==0:  #se k ainda não foi marcado
                             pai[k] = u   #escrevre que u descobriu (vai mudando ao longo do algoritmo)
                             nivel[k] = nivel[u-1] + 1  #verifica o nível do pai de k e soma 1
-        self.tree = [pai, nivel]
-        return (self.tree)
+        self.DFStree = [pai, nivel]
+        return (self.DFStree)
 
     def BFS(self,vi):
         self.marked = np.zeros(self.v,dtype=int) #list with the nodes that are being or has already been explored
@@ -92,13 +92,13 @@ class Graph_m: #grafo em matriz
 
         self.maxlevel = np.argmax(nivel)
 
-        self.tree = [pai, nivel,self.maxlevel]
-        return (self.tree)
+        self.BFStree = [pai, nivel,self.maxlevel]
+        return (self.BFStree)
 
 
     def distancia(self, v1, v2):
         self.BFS(v1)
-        distancia = self.tree[1][v2-1]
+        distancia = self.BFStree[1][v2-1]
         print(distancia)
 
     
