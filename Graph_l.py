@@ -64,8 +64,8 @@ class Graph_l:
                         pai[k-1] = u   #escrevre que u descobriu (vai mudando ao longo do algoritmo)
                         nivel[k-1] = nivel[u-1] + 1  #verifica o nível do pai de k e soma 1
         
-        self.tree = [pai, nivel]
-        return (self.tree)  
+        self.DFStree = [pai, nivel]
+        return (self.DFStree)  
 
     def BFS(self,vi):
         self.marked = np.zeros(self.v,dtype=int) #list with the nodes that are being or has already been explored
@@ -87,12 +87,20 @@ class Graph_l:
 
         self.maxlevel = np.argmax(nivel)
 
-        self.tree = [pai, nivel,self.maxlevel]
-        return (self.tree)
+        self.BFStree = [pai, nivel,self.maxlevel]
+        return (self.BFStree)
 
+    def mostra_DFS(self,vi):
+        self.DFS(vi)
+        print (self.DFStree)
+
+    def mostra_BFS(self,vi):
+        self.BFS(vi)
+        print (self.BFStree)
 
     def distancia(self, v1, v2):
         self.BFS(v1)
-        distancia = self.tree[1][v2-1]
+        distancia = self.BFStree[1][v2-1]
         print(distancia)
+
  
