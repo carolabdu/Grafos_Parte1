@@ -103,4 +103,12 @@ class Graph_l:
         distancia = self.BFStree[1][v2-1]
         print(distancia)
 
+    def diameter(self):  
+        diameter = 0
+        for i in range(int(self.v)):
+            self.BFS(i)
+            if self.maxlevel > diameter:
+                diameter = self.maxlevel
+        print(diameter)
+
  
