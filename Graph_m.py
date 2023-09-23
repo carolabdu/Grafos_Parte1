@@ -93,7 +93,13 @@ class Graph_m: #grafo em matriz
 
         self.maxlevel = np.argmax(nivel)
 
-        print('marcados:',self.marked)
-        print('pais:', pai)
-        print('niveis:', nivel) 
-        print('maxleel:', self.maxlevel)  
+        self.tree = [pai, nivel,self.maxlevel]
+        return (self.tree)
+
+
+    def distancia(self, v1, v2):
+        self.BFS(v1)
+        distancia = self.tree[1][v2-1]
+        print(distancia)
+
+    
