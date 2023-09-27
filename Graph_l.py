@@ -117,13 +117,16 @@ class Graph_l:
     
     def cc(self):  #não testada e fazer uma função para ordenar 
         cc = []
+        vistos = np.zeros(self.v,dtype=int)
         for vi in range(1,self.v +1):
-            marcados = [[],0]  #retorna os marcados e o tamanho da cc
-            pais_vi = self.BFS(vi)[0]
-            for k in range(self.v):
-                if pais_vi[k] != -1:
-                    marcados[0].append(k+1) #índice é uma unidade menor que o vétice
-                    marcados[1] += 1
+            if vistos[vi-1] == 0
+                marcados = [[],0]  #retorna os marcados e o tamanho da cc
+                pais_vi = self.BFS(vi)[0]
+                for k in range(self.v):
+                    if pais_vi[k] != -1:
+                        vistos[k] = 1
+                        marcados[0].append(k+1) #índice é uma unidade menor que o vétice
+                        marcados[1] += 1
             cc.append(marcados)
         return cc  
  
