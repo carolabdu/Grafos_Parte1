@@ -49,8 +49,8 @@ class Graph_l:
         self.marcados = np.zeros(self.v,dtype=int) #inicia vetor de marcação
         self.s = Stack() #cria pilha vazia
         self.s.push(vi)  #adiciona a raiz na fila
-        pai = np.zeros([self.v], dtype=int) #inicia vetor com os pais
-        nivel = np.zeros([self.v],dtype=int) #inicia vetor dos níveis
+        pai = np.array([-1] * self._vertices, dtype = int)) #inicia vetor com os pais
+        nivel = np.array([-1] * self._vertices, dtype = int)#inicia vetor dos níveis
         pai[vi-1] = 0 #indica que não tem pai pois é raiz
         nivel[vi -1]= 0 #nivel da raiz é zero 
         while self.s.isEmpty()==False : #enquanto pilha não estiver vazia 
@@ -70,8 +70,8 @@ class Graph_l:
     def BFS(self,vi):
         self.marked = np.zeros(self.v,dtype=int) #list with the nodes that are being or has already been explored
         self.Q = Queue() #Creates an empty Queue
-        pai = np.zeros([self.v], dtype=int) #inicia vetor com os pais
-        nivel = np.zeros([self.v],dtype=int) #inicia vetor dos níveis
+        pai = np.array([-1] * self._vertices, dtype = int) #inicia vetor com os pais
+        nivel = np.array([-1] * self._vertices, dtype = int) #inicia vetor dos níveis
         pai[vi-1] = 0 #indica que não tem pai pois é raiz
         self.marked[vi-1]=1#Marks the initial node(where we start the search)
         self.Q.add(vi) #Adds the firts node in the FIRTS POSITION of the Queue
