@@ -50,7 +50,7 @@ class Graph_m: #grafo em matriz
     def DFS(self,vi):
         self.marcados = np.zeros(self.v,dtype=int) #inicia vetor de marcação
         self.s = Stack() #cria pilha vazia
-        self.s.push(vi)  #adiciona a raiz na fila
+        self.s.push(vi)  #adiciona a raiz na pilha
         pai = np.zeros([self.v], dtype=int) #inicia vetor com os pais
         nivel = np.zeros([self.v],dtype=int) #inicia vetor dos níveis
         pai[vi-1] = 0 #indica que não tem pai pois é raiz
