@@ -100,7 +100,10 @@ class Graph_l:
 
     def distancia(self, v1, v2):
         self.BFS(v1)
-        distancia = self.BFStree[1][v2-1]
+        if self.BFStree[0][v2 -1] == -1: 
+            distancia = infinita #ou seja vértices não estão conectadas
+        else: 
+            distancia = self.BFStree[1][v2-1]
         print(distancia)
 
     def diameter(self):  
