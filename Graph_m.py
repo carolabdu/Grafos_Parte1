@@ -2,7 +2,7 @@ import numpy as np
 class Graph_m: #grafo em matriz 
     def __init__(self, v, a):
         self.v = v
-        self.a = a
+        self.a = a   #mudar forma de como guardar uasando numpy
         self.matriz = np.zeros([self.v, self.v], dtype=int)
         for i in range(len(self.a)):
             v1= self.a[i][0]
