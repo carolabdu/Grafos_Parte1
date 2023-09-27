@@ -10,7 +10,7 @@ class Graph_l:
             v= self.a[i][1]
             self.lista[u-1].append(v) #adicionar vértice v na linha u
             self.lista[v-1].append(u)
-            g [u-1] += 1
+            g [u-1] += 1  #tualiza os graus 
             g [v-1] += 1
         self.graus = g
     
