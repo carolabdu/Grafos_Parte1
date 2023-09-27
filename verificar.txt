@@ -1,0 +1,5 @@
+1. Construir vetor self.a com numpy
+2. Decidir se a lista está sendo construída da melhor forma (verificar tempo de acesso)
+3. Mudar vetores pais, níveis iniciais para -1, pois vértice pode não estar o vértice  #feito
+4. Discutir algoritmo cc e ordenar
+5. Ver como vamos imprimir 
