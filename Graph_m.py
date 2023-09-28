@@ -90,6 +90,7 @@ class Graph_m: #grafo em matriz
         pai = np.array([-1] *self.v, dtype = int) #inicia vetor com os pais
         nivel = np.array([-1] * self.v, dtype = int) #inicia vetor dos níveis
         pai[vi-1] = 0 #indica que não tem pai pois é raiz
+        nivel[vi-1] =0 
         self.marked[vi-1]=1#Marks the initial node(where we start the search)
         self.Q.add(vi) #Adds the firts node in the FIRTS POSITION of the Queue
         pai[vi-1] = 0 #indica que é raiz 
