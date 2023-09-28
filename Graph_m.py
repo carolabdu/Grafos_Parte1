@@ -122,14 +122,27 @@ class Graph_m: #grafo em matriz
         return distancia  
 
     def diameter(self, p):  
-        diameter = 0
-        for i in range(int(self.v)):
-            self.BFS(i,0)
-            if self.maxlevel > diameter:
-                diameter = self.maxlevel
-        if p==1:
-            print(diameter)
-        return diameter
+         def diameter(self,p): 
+        if self.v < 1000:
+            diameter = 0
+            for i in range(int(self.v)):
+                self.BFS(i,0)
+                print(self.maxlevel)
+                if self.maxlevel > diameter:
+                    diameter = self.maxlevel
+            if p==1:
+                print(diameter)
+            return diameter
+        else: 
+            for i in range(1000):
+                vi = random.randint(1, self.v)
+                diameter = 0
+                self.BFS(vi,0)
+                if self.maxlevel > diameter:
+                    diameter = self.maxlevel
+            if p==1:
+                print(diameter)
+            return diameter
 
     def cc(self,p):  #não testada e fazer uma função para ordenar 
         cc = []
