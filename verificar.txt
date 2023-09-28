@@ -3,3 +3,6 @@
 3. Mudar vetores pais, níveis iniciais para -1, pois vértice pode não estar o vértice  #feito
 4. Discutir algoritmo cc e ordenar
 5. Ver como vamos imprimir 
+6. Mudar diâmetro
+7. Fazer pp para apresentação
+8. Mudar relatório, usar mais as descrições de projeto. 
