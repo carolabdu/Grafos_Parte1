@@ -140,7 +140,7 @@ class Graph_l:
                         vistos[k] = 1
                         marcados[0].append(k+1) #índice é uma unidade menor que o vétice
                         marcados[1] += 1
-            cc.append(marcados)
+                cc.append(marcados)
         if p==1: 
             print(cc)
         return cc  
