@@ -30,14 +30,14 @@ class Graph_m: #grafo em matriz
 
     def graumin(self,p):
         graus = np.sum(self.matriz, axis=0)
-        grau_min = np.argmin(graus)
+        grau_min = np.min(graus)
         if p==1:
             print(grau_min)
         return grau_min
 
     def graumax(self, p):
         graus = np.sum(self.matriz, axis=0)
-        grau_max = np.argmax(graus)
+        grau_max = np.max(graus)
         if p==1:
           print(grau_max)
         return grau_max
