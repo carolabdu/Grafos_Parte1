@@ -14,11 +14,15 @@ class Graph_l:
             g [v-1] += 1
         self.graus = g
     
-    def vertices(self):
-        return(sef.v)
+    def vertices(self,p):
+        if p ==1:
+            print(self.v)
+        return(self.v)
     
-    def arestas(self):
+    def arestas(self,p):
         a = int(np.sum(self.graus))/2
+        if p==1:
+            print(a)
         return a
 
     def mostra_lista(self):
@@ -27,30 +31,38 @@ class Graph_l:
     def grau(self):
         print (self.graus)
 
-    def graumin(self):
+    def graumin(self,p):
         grau_min = np.argmin(self.graus)
-        print(grau_min)
+        if p==1:
+            print(grau_min)
+        return grau_min
 
-    def graumax(self):
+    def graumax(self,p):
         grau_max = np.argmax(self.graus)
-        print(grau_max)
+        if p==1:
+            print(grau_max)
+        return grau_max
         
-    def graumed(self):
+    def graumed(self,p):
         soma_graus = np.sum(self.graus)
         grau_med = (soma_graus/self.v)
-        print(grau_med)
+        if p==1:
+            print(grau_med)
+        return grau_med
 
-    def mediano(self):
+    def mediano(self,p):
         mediano = np.median(self.graus)
-        print (int(mediano))
+        if p==1: 
+            print (int(mediano))
+        return (int(mediano))
 
 
-    def DFS(self,vi):
+    def DFS(self,vi,p):
         self.marcados = np.zeros(self.v,dtype=int) #inicia vetor de marcação
         self.s = Stack() #cria pilha vazia
         self.s.push(vi)  #adiciona a raiz na fila
-        pai = np.array([-1] * self._vertices, dtype = int)) #inicia vetor com os pais
-        nivel = np.array([-1] * self._vertices, dtype = int)#inicia vetor dos níveis
+        pai = np.array([-1] * self.v, dtype = int) #inicia vetor com os pais
+        nivel = np.array([-1] * self.v, dtype = int)#inicia vetor dos níveis
         pai[vi-1] = 0 #indica que não tem pai pois é raiz
         nivel[vi -1]= 0 #nivel da raiz é zero 
         while self.s.isEmpty()==False : #enquanto pilha não estiver vazia 
@@ -65,13 +77,15 @@ class Graph_l:
                         nivel[k-1] = nivel[u-1] + 1  #verifica o nível do pai de k e soma 1
         
         self.DFStree = [pai, nivel]
+        if p==1:
+            print('pais:', pai, 'níveis', nivel)
         return (self.DFStree)  
 
-    def BFS(self,vi):
+    def BFS(self,vi,p):
         self.marked = np.zeros(self.v,dtype=int) #list with the nodes that are being or has already been explored
         self.Q = Queue() #Creates an empty Queue
-        pai = np.array([-1] * self._vertices, dtype = int) #inicia vetor com os pais
-        nivel = np.array([-1] * self._vertices, dtype = int) #inicia vetor dos níveis
+        pai = np.array([-1] * self.v, dtype = int) #inicia vetor com os pais
+        nivel = np.array([-1] * self.v, dtype = int) #inicia vetor dos níveis
         pai[vi-1] = 0 #indica que não tem pai pois é raiz
         self.marked[vi-1]=1#Marks the initial node(where we start the search)
         self.Q.add(vi) #Adds the firts node in the FIRTS POSITION of the Queue
@@ -88,34 +102,32 @@ class Graph_l:
         self.maxlevel = np.argmax(nivel)
 
         self.BFStree = [pai, nivel,self.maxlevel]
+        if p==1:
+            print('pais:', pai, 'níveis', nivel)
         return (self.BFStree)
 
-    def mostra_DFS(self,vi):
-        self.DFS(vi)
-        print (self.DFStree)
-
-    def mostra_BFS(self,vi):
-        self.BFS(vi)
-        print (self.BFStree)
-
-    def distancia(self, v1, v2):
+    def distancia(self, v1, v2,p):
         self.BFS(v1)
         if self.BFStree[0][v2 -1] == -1: 
             distancia = infinita #ou seja vértices não estão conectadas
         else: 
             distancia = self.BFStree[1][v2-1]
-        print(distancia)
+        if p==1:
+            print(distancia)
+        return distancia
 
-    def diameter(self):  
+    def diameter(self,p):  
         diameter = 0
         for i in range(int(self.v)):
             self.BFS(i)
             if self.maxlevel > diameter:
                 diameter = self.maxlevel
-        print(diameter)
+        if p==1:
+            print(diameter)
+        return diameter
 
     
-    def cc(self):  #não testada e fazer uma função para ordenar 
+    def cc(self,p):  #não testada e fazer uma função para ordenar 
         cc = []
         vistos = np.zeros(self.v,dtype=int)
         for vi in range(1,self.v +1):
@@ -128,5 +140,6 @@ class Graph_l:
                         marcados[0].append(k+1) #índice é uma unidade menor que o vétice
                         marcados[1] += 1
             cc.append(marcados)
+        if p==1: 
+            print(cc)
         return cc  
- 
