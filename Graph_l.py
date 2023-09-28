@@ -87,6 +87,7 @@ class Graph_l:
         pai = np.array([-1] * self.v, dtype = int) #inicia vetor com os pais
         nivel = np.array([-1] * self.v, dtype = int) #inicia vetor dos níveis
         pai[vi-1] = 0 #indica que não tem pai pois é raiz
+        nivel[vi -1] =0
         self.marked[vi-1]=1#Marks the initial node(where we start the search)
         self.Q.add(vi) #Adds the firts node in the FIRTS POSITION of the Queue
         pai[vi-1] = 0 #indica que é raiz 
@@ -107,7 +108,7 @@ class Graph_l:
         return (self.BFStree)
 
     def distancia(self, v1, v2,p):
-        self.BFS(v1)
+        self.BFS(v1,0)
         if self.BFStree[0][v2 -1] == -1: 
             distancia = infinita #ou seja vértices não estão conectadas
         else: 
@@ -119,7 +120,7 @@ class Graph_l:
     def diameter(self,p):  
         diameter = 0
         for i in range(int(self.v)):
-            self.BFS(i)
+            self.BFS(i,0)
             if self.maxlevel > diameter:
                 diameter = self.maxlevel
         if p==1:
@@ -131,9 +132,9 @@ class Graph_l:
         cc = []
         vistos = np.zeros(self.v,dtype=int)
         for vi in range(1,self.v +1):
-            if vistos[vi-1] == 0
+            if vistos[vi-1] == 0:
                 marcados = [[],0]  #retorna os marcados e o tamanho da cc
-                pais_vi = self.BFS(vi)[0]
+                pais_vi = self.BFS(vi,0)[0]
                 for k in range(self.v):
                     if pais_vi[k] != -1:
                         vistos[k] = 1
