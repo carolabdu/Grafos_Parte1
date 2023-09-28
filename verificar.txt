@@ -1,8 +1,8 @@
-1. Construir vetor self.a com numpy
-2. Decidir se a lista está sendo construída da melhor forma (verificar tempo de acesso)
+1. Construir vetor self.a com numpy - Alice
+2. Decidir se a lista está sendo construída da melhor forma (verificar tempo de acesso) 
 3. Mudar vetores pais, níveis iniciais para -1, pois vértice pode não estar o vértice  #feito
-4. Discutir algoritmo cc e ordenar
-5. Ver como vamos imprimir 
-6. Mudar diâmetro
+4. Discutir algoritmo cc e ordenar - Alice
+5. Ver como vamos imprimir - Alice
+6. Mudar diâmetro - Carol
 7. Fazer pp para apresentação
 8. Mudar relatório, usar mais as descrições de projeto. 
