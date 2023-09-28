@@ -124,9 +124,8 @@ class Graph_m: #grafo em matriz
     def diameter(self, p):  
         if self.v < 1000:
             diameter = 0
-            for i in range(int(self.v)):
+            for i in range(1,self.v):
                 self.BFS(i,0)
-                print(self.maxlevel)
                 if self.maxlevel > diameter:
                     diameter = self.maxlevel
             if p==1:
