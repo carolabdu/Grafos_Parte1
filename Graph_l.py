@@ -1,7 +1,7 @@
 class Graph_l:
     def __init__(self, v, a):
         self.v = v
-        self.a = a
+        self.a = np.array(a)
         self.num_arestas = len(self.a)
         self.lista = [[] for i in range(self.v)] #não sabemos quantos elementos tem em cada linha
         g = np.zeros(self.v,dtype=int)
@@ -13,7 +13,7 @@ class Graph_l:
             g [u-1] += 1  #tualiza os graus 
             g [v-1] += 1
         self.graus = g
-        self.lista = np.asarray(self.lista, dtype=ndarray)
+        #self.lista = np.asarray(self.lista, dtype=list)
         
     def vertices(self,p):
         if p ==1:
