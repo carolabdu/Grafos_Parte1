@@ -122,7 +122,6 @@ class Graph_m: #grafo em matriz
         return distancia  
 
     def diameter(self, p):  
-         def diameter(self,p): 
         if self.v < 1000:
             diameter = 0
             for i in range(int(self.v)):
