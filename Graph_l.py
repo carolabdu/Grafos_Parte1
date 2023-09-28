@@ -13,7 +13,8 @@ class Graph_l:
             g [u-1] += 1  #tualiza os graus 
             g [v-1] += 1
         self.graus = g
-    
+        self.lista = np.asarray(self.lista, dtype=ndarray)
+        
     def vertices(self,p):
         if p ==1:
             print(self.v)
