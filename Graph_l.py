@@ -32,13 +32,13 @@ class Graph_l:
         print (self.graus)
 
     def graumin(self,p):
-        grau_min = np.argmin(self.graus)
+        grau_min = np.min(self.graus)
         if p==1:
             print(grau_min)
         return grau_min
 
     def graumax(self,p):
-        grau_max = np.argmax(self.graus)
+        grau_max = np.max(self.graus)
         if p==1:
             print(grau_max)
         return grau_max
@@ -100,7 +100,7 @@ class Graph_l:
                     self.marked[w-1]=1 #Marks w if it's not been discovered yet
                     self.Q.add(w) #Adds w to the first position of the Queue
 
-        self.maxlevel = np.argmax(nivel)
+        self.maxlevel = np.max(nivel)
 
         self.BFStree = [pai, nivel,self.maxlevel]
         if p==1:
@@ -120,7 +120,7 @@ class Graph_l:
     def diameter(self,p):  
         if self.v < 1000:
             diameter = 0
-            for i in range(int(self.v)):
+            for i in range(1,self.v):
                 self.BFS(i,0)
                 print(self.maxlevel)
                 if self.maxlevel > diameter:
