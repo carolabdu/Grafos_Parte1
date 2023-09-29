@@ -1,5 +1,5 @@
 
-with open('textoteste.txt', 'r') as archive:
+with open('grafo_n.txt', 'r') as archive:
         text = [int(node) for node in archive.read().split() if node.isdigit()]
         nodes = text[0]
         edges = []
