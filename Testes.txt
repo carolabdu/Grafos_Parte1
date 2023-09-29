@@ -1,0 +1,27 @@
+Questão 1: 
+--Grafo 1:
+Memória utilizada pela matriz: 309.4375 Megabytes
+Memória utilizada pela lista: 4.2421875 Megabytes
+Grau médio = 21.9954 
+ Grau mediano = 22 
+ Grau máximo = 43 
+ Grau mínimo = 8
+
+Número de arestas = 109977.0 
+ Número de vértices = 10000
+
+-- Grafo 2:
+
+Memória utilizada pela matriz: 220.359375 Megabytes
+Memória utilizada pela lista: -42.421875 Megabytes
+Grau médio = 52.04588772323216 
+ Grau mediano = 55 
+ Grau máximo = 112 
+ Grau mínimo = 1
+
+Número de arestas = 1299794.0 
+Número de vértices = 49948
+
+
+Questão 2:
+
