@@ -32,14 +32,23 @@ Número de arestas = 765618.0
  Número de vértices = 375000
 
 Grafo 4:
-Memória utilizada pela lista: 98.5625 Megabytes
-Grau médio = 4.083296 
- Grau mediano = 4 
- Grau máximo = 15 
- Grau mínimo = 1
-Número de arestas = 765618.0 
+Memória utilizada pela lista: -750.6171875 Megabytes
+Grau médio = 43.66627733333333 
+Grau mediano = 47 
+Grau máximo = 89 
+Grau mínimo = 9
+Número de arestas = 8187427.0 
  Número de vértices = 375000
 
+Grafo 5:
+Memória utilizada pela lista: 7935.904784611424 Megabytes
+Grau médio = 5.4374928516129035 
+ Grau mediano = 5 
+ Grau máximo = 22 
+ Grau mínimo = 1
+
+Número de arestas = 13168928.0 
+ Número de vértices = 4843750
 
 Questão 2:
 
@@ -77,13 +86,16 @@ DFS_lista no 1: Pai do 10: -1 - Pai do 20: -1 - Pai do 30: 141597
 DFS_lista no 2: Pai do 10: 60012 - Pai do 20: 229942 - Pai do 30: -1
 DFS_lista no 3: Pai do 10: 360502 - Pai do 20: 319691 - Pai do 30: -1
 
+grafo 4:
+BFS_lista no 1: Pai do 10: 194465 - Pai do 20: 274921 - Pai do 30: 136244
+BFS_lista no 2: Pai do 10: -1 - Pai do 20: -1 - Pai do 30: -1
+BFS_lista no 3: Pai do 10: -1 - Pai do 20: -1 - Pai do 30: -1
+DFS_lista no 1: Pai do 10: 357763 - Pai do 20: 298215 - Pai do 30: 140132
+DFS_lista no 2: Pai do 10: -1 - Pai do 20: -1 - Pai do 30: -1
+DFS_lista no 3: Pai do 10: -1 - Pai do 20: -1 - Pai do 30: -1
+
 Questão 4:
-BFS_lista no 1: Pai do 10: -1 - Pai do 20: -1 - Pai do 30: 141597
-BFS_lista no 2: Pai do 10: 158403 - Pai do 20: 75471 - Pai do 30: -1
-BFS_lista no 3: Pai do 10: 158403 - Pai do 20: 319691 - Pai do 30: -1
-DFS_lista no 1: Pai do 10: -1 - Pai do 20: -1 - Pai do 30: 141597
-DFS_lista no 2: Pai do 10: 60012 - Pai do 20: 229942 - Pai do 30: -1
-DFS_lista no 3: Pai do 10: 360502 - Pai do 20: 319691 - Pai do 30: -1
+
 
 
 Questão 5:
@@ -95,13 +107,14 @@ grafo 2: Lista : (10,20) = infinita - (10,30) = 3 - (20,30) = 3
 
 grafo 3: Lista : (10,20) = 9 - (10,30) = infinita - (20,30) = infinita[]
 
-grafo 4: Lista : (10,20) = 9 - (10,30) = infinita - (20,30) = infinita
+grafo 4: Lista : Lista : (10,20) = 4 - (10,30) = 4 - (20,30) = 4
 
 Questão 6:
 grafo 1: Número de componentes matriz: [10000] max 10000 min 10000
 grafo 2: Número de componentes matriz: [3125, 25000, 12500, 1562, 6250, 781, 390, 97, 195, 48] max 25000 min 48
 grafo 3: Número de componentes matriz: [125000, 250000] max 250000 min 125000
-grafo 4: Número de componentes matriz: [125000, 250000] max 250000 min 125000
+grafo 4: Número de componentes matriz: [250000, 125000] max 250000 min 125000
+
 
 Questão 7:
 grafo 1:  diâmetro = 4
