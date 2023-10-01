@@ -23,7 +23,7 @@ class Graph_l: #Classe de grafos seguindo a representação de lista de adjacên
     def arestas(self,p): #Retorna o número de arestas do grafo
         a = int(np.sum(self.graus))/2 #Usamos a relação: Grau = 2*#Arestas
         if p==1:
-            arquivo_saida.write(f'\nNúmero de arestas: {a}')
+            arquivo_saida.write(f'\nNúmero de arestas: {int(a)}')
         return a
 
     def mostra_lista(self): #Retorna a lista de adjacência
@@ -47,7 +47,7 @@ class Graph_l: #Classe de grafos seguindo a representação de lista de adjacên
     def graumed(self,p): #Retorna a média dos graus
         grau_med = np.mean(self.graus)
         if p==1:
-            arquivo_saida.write(f'\nGrau médio: {grau_min}')
+            arquivo_saida.write(f'\nGrau médio: {grau_med}')
         return grau_med
 
     def mediano(self,p):
