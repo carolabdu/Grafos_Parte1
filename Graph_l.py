@@ -17,47 +17,47 @@ class Graph_l: #Classe de grafos seguindo a representação de lista de adjacên
     #Algumas funções possuem o padrão "p", que define se o resultado dele ser escrito no arquivo de saída ou não
     def vertices(self,p): #Retorna o número de vértices do grafo 
         if p ==1:
-            arquivo_saida.write(f'Número de vértices: {self.v}') ######PAREI AQUI
+            arquivo_saida.write(f'\nNúmero de vértices: {self.v}')
         return self.v 
     
     def arestas(self,p): #Retorna o número de arestas do grafo
         a = int(np.sum(self.graus))/2 #Usamos a relação: Grau = 2*#Arestas
         if p==1:
-            arquivo.write(f'Número de arestas: {a}')
+            arquivo_saida.write(f'\nNúmero de arestas: {a}')
         return a
 
     def mostra_lista(self): #Retorna a lista de adjacência
-        return (self.lista) 
+        return self.lista 
     
     def mostra_grau(self): #Retorna a lista de graus
-        return (self.graus)
+        return self.graus
 
-    def graumin(self,p=0): #Retorna o grau mínimo
+    def graumin(self,p): #Retorna o grau mínimo
         grau_min = np.min(self.graus)
         if p==1:
-            print(grau_min)
+            arquivo_saida.write(f'\nGrau mínimo: {grau_min}')
         return grau_min
 
     def graumax(self,p): #Retorna o grau máximo
         grau_max = np.max(self.graus)
         if p==1:
-            print(grau_max)
+            arquivo_saida.write(f'\nGrau máximo: {grau_max}')
         return grau_max
         
     def graumed(self,p): #Retorna a média dos graus
         grau_med = np.mean(self.graus)
         if p==1:
-            print(grau_med)
+            arquivo_saida.write(f'\nGrau médio: {grau_min}')
         return grau_med
 
     def mediano(self,p):
         mediano = np.median(self.graus)
         if p==1: 
-            print (int(mediano))
+            arquivo_saida.write(f'\nMediana dos graus: {mediano}')
         return int(mediano)
 
 
-    def DFS(self,vi,p=0): #Implementação da busca em profundidade
+    def DFS(self,vi,p): #Implementação da busca em profundidade
         self.marcados = np.zeros(self.v,dtype=int) #inicia vetor de marcação
         self.s = Stack() #cria pilha vazia
         self.s.push(vi)  #adiciona a raiz na fila
@@ -78,7 +78,7 @@ class Graph_l: #Classe de grafos seguindo a representação de lista de adjacên
         
         self.DFStree = [pai, nivel]
         if p==1:
-            print('pais:', pai, 'níveis', nivel)
+            arquivo_saida.write(f'\nBusca DFS:\nPais: {pai}\nNíveis: {nivel}')
         return (self.DFStree)  
 
     def BFS(self,vi,p): #Implementação da busca em largura
@@ -103,17 +103,17 @@ class Graph_l: #Classe de grafos seguindo a representação de lista de adjacên
 
         self.BFStree = [pai, nivel, self.maxlevel] 
         if p==1:
-            print('pais:', pai, 'níveis', nivel)
+            arquivo_saida.write(f'\nBusca BFS:\nPais: {pai}\nNíveis: {nivel}')
         return (self.BFStree)
 
-    def distancia(self, v1, v2,p=0): #Retorna a distâncoa entre dois vértices
+    def distancia(self, v1, v2): #Retorna a distâncoa entre dois vértices
         self.BFS(v1) #Roda a BFS para o primeiro vértice
         if self.BFStree[0][v2 -1] == -1: #Checa se o segundo vértice está conectado ao primeiro(caso ele tenha um pai na BFStree, então os dois são conectados)
             distancia = 'infinita' #Ou seja vértices não estão conectadas
         else: 
             distancia = self.BFStree[1][v2-1] #O nível será a distância entre os vértices
         if p==1:
-            print(distancia)
+            arquivo_saida.write(f'\nDistância entre {v1} e {v2}: {distancia}')
         return distancia
 
     def diameter(self,p=0):  #Retorna o diãmetro do grafo
@@ -132,24 +132,24 @@ class Graph_l: #Classe de grafos seguindo a representação de lista de adjacên
                 if self.maxlevel > diameter: #Procura o maior nível dentre os vértices, que será o diâmetro
                     diameter = self.maxlevel
         if p==1:
-            print(diameter)
+            arquivo_saida.write(f'\nDiâmetro do grafo: {diameter}')
         return diameter
 
     
-    def cc(self,p):  #Retorna o número de componentes conexas,
-        cc = []
-        vistos = np.zeros(self.v,dtype=int)
+    def cc(self,p):  #Retorna o número de componentes conexas, a maior componente e a menor
+        cc = [] #Lista das componentes conexas
+        vistos = np.zeros(self.v,dtype=int) #Array zerado para indicar se o vértice foi visto ou não
         for vi in range(1,self.v +1):
-            if vistos[vi-1] == 0:
-                marcados = [[],0]  #retorna os marcados e o tamanho da cc
-                pais_vi = self.BFS(vi,0)[0]
-                for k in range(self.v):
-                    if pais_vi[k] != -1:
-                        vistos[k] = 1
-                        marcados[0].append(k+1) #índice é uma unidade menor que o vétice
-                        marcados[1] += 1
-             cc.append(marcados[1])
+            if vistos[vi-1] == 0: 
+                marcados = [[],0]  #Retorna os vértices da componente e o tamanho dela
+                pais_vi = self.BFS(vi,0)[0] #Pega os pais de todos os vértices
+                for k in range(self.v): 
+                    if pais_vi[k] != -1: #Se o vértice tiver pai, ele está na componente conexa
+                        vistos[k] = 1 #Altera o vetor definindo que o vértice foi visto
+                        marcados[0].append(k+1) #Adiciona o vétice na lista de componentes conexas(índice é uma unidade menor que o vétice)
+                        marcados[1] += 1 #Atualiza o número total de componentes
+             cc.append(marcados[1]) #Adiciona as componentes à lista de componentes
         fim = np.asarray(cc)
         if p==1: 
-            print('Número de componentes matriz:',cc, 'max', np.max(fim), 'min', np.min(fim))
+            arquivo_saida.write(f'\nNúmero de componentes conexas no grafo: {cc}\nMaior componente conexa: {np.max(fim)}\nMenor componente conexa: {np.min(fim)}')
         return cc   
