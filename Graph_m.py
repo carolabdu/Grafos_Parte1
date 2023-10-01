@@ -17,7 +17,7 @@ class Graph_m: #grafo em matriz
              arquivo_saida.write(f'\nNúmero de vértices: {self.v}')
         return self.v
 
-    def aresta(self,p):
+    def arestas(self,p):
         arquivo_saida = open(f'Resultados_{self.arq}.txt', 'a', encoding='UTF-8')
         if p==1:
             arquivo_saida.write(f'\nNúmero de arestas: {int(len(self.a)}')
