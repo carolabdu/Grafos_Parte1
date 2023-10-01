@@ -151,5 +151,5 @@ class Graph_l: #Classe de grafos seguindo a representação de lista de adjacên
                 cc.append(marcados[1]) #Adiciona as componentes à lista de componentes
         fim = np.asarray(cc)
         if p==1: 
-            arquivo_saida.write(f'\nNúmero de componentes conexas no grafo: {cc}\nMaior componente conexa: {np.max(fim)}\nMenor componente conexa: {np.min(fim)}')
+            arquivo_saida.write(f'\nNúmero de componentes conexas no grafo: {len(fim)}\nMaior componente conexa: {np.max(fim)}\nMenor componente conexa: {np.min(fim)}')
         return cc   
