@@ -5,4 +5,5 @@ with open('grafo_n.txt', 'r') as arquivo:
         arestas = [] #Lista vazia que vai conter todos os pares de arestas do grafo
         for i in range(len(texto[1:])//2):
             arestas += [texto[2*i+1:2*i+3]] #Atualiza a lista de arestas, criando sublistas com os pares de arestas
-#print (arestas)
+
+arquivo_saida = open('Resultados.txt', 'a') #Cria um arquivo de saída que guardará informações sobre os grafos
