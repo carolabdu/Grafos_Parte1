@@ -157,7 +157,7 @@ class Graph_m: #grafo em matriz
                 cc.append(marcados[1])
         fim = np.asarray(cc)
         if p==1: 
-            print('Número de componentes matriz:',cc, 'max', np.max(fim), 'min', np.min(fim))
+            print('Número de componentes matriz:',len(fim), 'max', np.max(fim), 'min', np.min(fim))
         return cc    
 
     
