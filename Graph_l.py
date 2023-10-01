@@ -96,7 +96,7 @@ class Graph_l: #Classe de grafos seguindo a representação de lista de adjacên
                 if self.marcados[w-1]==0: 
                     pai[w-1]= v #Se w não tiver sido marcado, o vértice que o descobriu(seu pai) foi v
                     nivel[w-1] = nivel[v-1]+1 #Muda o nível atual para o nível de w
-                    self.marked[w-1]=1 #Marca w se não foi descoberto ainda
+                    self.marcados[w-1]=1 #Marca w se não foi descoberto ainda
                     self.Q.add(w) #Adiciona w na primeira poição da fila
 
         self.maxlevel = np.max(nivel) #Pega o nível máximo
@@ -148,7 +148,7 @@ class Graph_l: #Classe de grafos seguindo a representação de lista de adjacên
                         vistos[k] = 1 #Altera o vetor definindo que o vértice foi visto
                         marcados[0].append(k+1) #Adiciona o vétice na lista de componentes conexas(índice é uma unidade menor que o vétice)
                         marcados[1] += 1 #Atualiza o número total de componentes
-             cc.append(marcados[1]) #Adiciona as componentes à lista de componentes
+                cc.append(marcados[1]) #Adiciona as componentes à lista de componentes
         fim = np.asarray(cc)
         if p==1: 
             arquivo_saida.write(f'\nNúmero de componentes conexas no grafo: {cc}\nMaior componente conexa: {np.max(fim)}\nMenor componente conexa: {np.min(fim)}')
