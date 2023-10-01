@@ -12,12 +12,12 @@ class Graph_m: #grafo em matriz
 
     def vertices(self,p):
         if p==1:
-            print (self.v)
+             arquivo_saida.write(f'\nNúmero de vértices: {self.v}')
         return self.v
 
     def aresta(self,p):
         if p==1:
-            print (len(self.a))
+            arquivo_saida.write(f'\nNúmero de arestas: {int(len(self.a)}')
         return len(self.a)
     
     def mostra_matriz(self):
@@ -32,14 +32,14 @@ class Graph_m: #grafo em matriz
         graus = np.sum(self.matriz, axis=0)
         grau_min = np.min(graus)
         if p==1:
-            print(grau_min)
+            arquivo_saida.write(f'\nGrau mínimo: {grau_min}')
         return grau_min
 
     def graumax(self, p):
         graus = np.sum(self.matriz, axis=0)
         grau_max = np.max(graus)
         if p==1:
-          print(grau_max)
+          arquivo_saida.write(f'\nGrau máximo: {grau_max}')
         return grau_max
         
     
@@ -48,14 +48,14 @@ class Graph_m: #grafo em matriz
         soma_graus = np.sum(np.sum(self.matriz, axis=0), axis=0)
         grau_med = (soma_graus/self.v)
         if p==1:
-            print(grau_med)
+            arquivo_saida.write(f'\nGrau médio: {grau_med}')
         return grau_med
 
     def mediano(self,p):
         graus = np.sum(self.matriz, axis= 0)
         mediano = np.median(graus)
         if p==1:
-            print(int(mediano))
+            arquivo_saida.write(f'\nMediana dos graus: {mediano}')
         return int(mediano)
 
 
@@ -81,7 +81,7 @@ class Graph_m: #grafo em matriz
                             nivel[k] = nivel[u-1] + 1  #verifica o nível do pai de k e soma 1
         self.DFStree = [pai, nivel]
         if p==1: 
-            print('pais:', pai, 'níveis:', nivel)
+           arquivo_saida.write(f'\nBusca DFS:\nPais: {pai}\nNíveis: {nivel}')
         return (self.DFStree)
 
     def BFS(self,vi,p):
@@ -108,7 +108,7 @@ class Graph_m: #grafo em matriz
         self.maxlevel = np.argmax(nivel)
         self.BFStree = [pai, nivel,self.maxlevel]
         if p==1: 
-            print('pais:', pai, 'níveis:', nivel)
+            arquivo_saida.write(f'\nBusca BFS:\nPais: {pai}\nNíveis: {nivel}')
         return (self.BFStree)
 
     def distancia(self, v1, v2,p):
@@ -118,7 +118,7 @@ class Graph_m: #grafo em matriz
         else: 
             distancia = self.BFStree[1][v2-1]
         if p==1:
-            print(distancia)
+            arquivo_saida.write(f'\nDistância entre {v1} e {v2}: {distancia}')
         return distancia  
 
     def diameter(self, p):  
@@ -129,7 +129,7 @@ class Graph_m: #grafo em matriz
                 if self.maxlevel > diameter:
                     diameter = self.maxlevel
             if p==1:
-                print(diameter)
+                 arquivo_saida.write(f'\nDiâmetro do grafo: {diameter}')
             return diameter
         else: 
             for i in range(1000):
@@ -139,7 +139,7 @@ class Graph_m: #grafo em matriz
                 if self.maxlevel > diameter:
                     diameter = self.maxlevel
             if p==1:
-                print(diameter)
+                arquivo_saida.write(f'\nDiâmetro do grafo: {diameter}')
             return diameter
 
     def cc(self,p):  #não testada e fazer uma função para ordenar 
@@ -157,7 +157,7 @@ class Graph_m: #grafo em matriz
                 cc.append(marcados[1])
         fim = np.asarray(cc)
         if p==1: 
-            print('Número de componentes matriz:',len(fim), 'max', np.max(fim), 'min', np.min(fim))
+             arquivo_saida.write(f'\nNúmero de componentes conexas no grafo: {len(fim)}\nMaior componente conexa: {np.max(fim)}\nMenor componente conexa: {np.min(fim)}')
         return cc    
 
     
