@@ -1,5 +1,6 @@
 class Graph_l: #Classe de grafos seguindo a representação de lista de adjacência
     def __init__(self, v, a): #(número de vértices, número de arestas)
+        self.aqruivo_saida = [] #Lista que vai receber os resultados desejados
         self.v = v
         self.a = np.array(a)
         self.num_arestas = len(self.a) 
@@ -17,13 +18,13 @@ class Graph_l: #Classe de grafos seguindo a representação de lista de adjacên
     #Algumas funções possuem o padrão "p", que define se o resultado dele ser escrito no arquivo de saída ou não
     def vertices(self,p): #Retorna o número de vértices do grafo 
         if p ==1:
-            arquivo_saida.write(f'\nNúmero de vértices: {self.v}')
+            self.arquivo_saida.append(f'\nNúmero de vértices: {self.v}')
         return self.v 
     
     def arestas(self,p): #Retorna o número de arestas do grafo
         a = int(np.sum(self.graus))/2 #Usamos a relação: Grau = 2*#Arestas
         if p==1:
-            arquivo_saida.write(f'\nNúmero de arestas: {int(a)}')
+            self.arquivo_saida.append(f'\nNúmero de arestas: {int(a)}')
         return a
 
     def mostra_lista(self): #Retorna a lista de adjacência
@@ -35,25 +36,25 @@ class Graph_l: #Classe de grafos seguindo a representação de lista de adjacên
     def graumin(self,p): #Retorna o grau mínimo
         grau_min = np.min(self.graus)
         if p==1:
-            arquivo_saida.write(f'\nGrau mínimo: {grau_min}')
+            self.arquivo_saida.append(f'\nGrau mínimo: {grau_min}')
         return grau_min
 
     def graumax(self,p): #Retorna o grau máximo
         grau_max = np.max(self.graus)
         if p==1:
-            arquivo_saida.write(f'\nGrau máximo: {grau_max}')
+            self.arquivo_saida.append(f'\nGrau máximo: {grau_max}')
         return grau_max
         
     def graumed(self,p): #Retorna a média dos graus
         grau_med = np.mean(self.graus)
         if p==1:
-            arquivo_saida.write(f'\nGrau médio: {grau_med}')
+            self.arquivo_saida.append(f'\nGrau médio: {grau_med}')
         return grau_med
 
     def mediano(self,p):
         mediano = np.median(self.graus)
         if p==1: 
-            arquivo_saida.write(f'\nMediana dos graus: {mediano}')
+            self.arquivo_saida.append(f'\nMediana dos graus: {mediano}')
         return int(mediano)
 
 
@@ -78,7 +79,7 @@ class Graph_l: #Classe de grafos seguindo a representação de lista de adjacên
         
         self.DFStree = [pai, nivel]
         if p==1:
-            arquivo_saida.write(f'\nBusca DFS:\nPais: {pai}\nNíveis: {nivel}')
+            self.arquivo_saida.append(f'\nBusca DFS:\nPais: {pai}\nNíveis: {nivel}')
         return (self.DFStree)  
 
     def BFS(self,vi,p): #Implementação da busca em largura
@@ -103,7 +104,7 @@ class Graph_l: #Classe de grafos seguindo a representação de lista de adjacên
 
         self.BFStree = [pai, nivel, self.maxlevel] 
         if p==1:
-            arquivo_saida.write(f'\nBusca BFS:\nPais: {pai}\nNíveis: {nivel}')
+            self.arquivo_saida.append(f'\nBusca BFS:\nPais: {pai}\nNíveis: {nivel}')
         return (self.BFStree)
 
     def distancia(self, v1, v2): #Retorna a distâncoa entre dois vértices
@@ -113,7 +114,7 @@ class Graph_l: #Classe de grafos seguindo a representação de lista de adjacên
         else: 
             distancia = self.BFStree[1][v2-1] #O nível será a distância entre os vértices
         if p==1:
-            arquivo_saida.write(f'\nDistância entre {v1} e {v2}: {distancia}')
+            self.arquivo_saida.append(f'\nDistância entre {v1} e {v2}: {distancia}')
         return distancia
 
     def diameter(self,p=0):  #Retorna o diãmetro do grafo
@@ -132,7 +133,7 @@ class Graph_l: #Classe de grafos seguindo a representação de lista de adjacên
                 if self.maxlevel > diameter: #Procura o maior nível dentre os vértices, que será o diâmetro
                     diameter = self.maxlevel
         if p==1:
-            arquivo_saida.write(f'\nDiâmetro do grafo: {diameter}')
+            self.arquivo_saida.append(f'\nDiâmetro do grafo: {diameter}')
         return diameter
 
     
@@ -151,5 +152,5 @@ class Graph_l: #Classe de grafos seguindo a representação de lista de adjacên
                 cc.append(marcados[1]) #Adiciona as componentes à lista de componentes
         fim = np.asarray(cc)
         if p==1: 
-            arquivo_saida.write(f'\nNúmero de componentes conexas no grafo: {len(fim)}\nMaior componente conexa: {np.max(fim)}\nMenor componente conexa: {np.min(fim)}')
+            self.arquivo_saida.append(f'\nNúmero de componentes conexas no grafo: {len(fim)}\nMaior componente conexa: {np.max(fim)}\nMenor componente conexa: {np.min(fim)}')
         return cc   
