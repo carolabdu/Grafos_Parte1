@@ -50,7 +50,18 @@ Grau médio = 5.4374928516129035
 Número de arestas = 13168928.0 
  Número de vértices = 4843750
 
-Questão 2:
+Questão 2 e 3:
+Grafo 1:
+Tempo médio de busca largura lista = 0.10171765327453614 segundos
+Tempo médio de busca profundidade lista = 0.35429657459259034 segundos
+
+GRAFO 2
+Tempo médio de busca largura lista = 0.617655897140503 segundos
+Tempo médio de busca profundidade lista = 2.196409161090851 segundos
+
+GRAFO 3
+Tempo médio de busca largura lista = 5.873431446552277 segundos
+Tempo médio de busca profundidade lista = 1.6452283358573914 segundos
 
 
 
