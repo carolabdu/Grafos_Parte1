@@ -63,6 +63,9 @@ GRAFO 3
 Tempo médio de busca largura lista = 5.873431446552277 segundos
 Tempo médio de busca profundidade lista = 1.6452283358573914 segundos
 
+GRAFO 4
+Tempo médio de busca largura lista = 14.193263292312622 segundos
+Tempo médio de busca profundidade lista = 18.599119243621825 segundos
 
 
 Questão 4:
