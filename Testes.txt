@@ -94,7 +94,13 @@ DFS_lista no 1: Pai do 10: 357763 - Pai do 20: 298215 - Pai do 30: 140132
 DFS_lista no 2: Pai do 10: -1 - Pai do 20: -1 - Pai do 30: -1
 DFS_lista no 3: Pai do 10: -1 - Pai do 20: -1 - Pai do 30: -1
 
-Questão 4:
+Grafo 5:
+BFS_lista no 1: Pai do 10: 1888350 - Pai do 20: -1 - Pai do 30: 2502539
+BFS_lista no 2: Pai do 10: -1 - Pai do 20: -1 - Pai do 30: -1
+BFS_lista no 3: Pai do 10: 3696745 - Pai do 20: -1 - Pai do 30: 191713
+DFS_lista no 1: Pai do 10: 2245850 - Pai do 20: -1 - Pai do 30: 191713
+DFS_lista no 2: Pai do 10: -1 - Pai do 20: -1 - Pai do 30: -1
+DFS_lista no 3: Pai do 10: 2245850 - Pai do 20: -1 - Pai do 30: 191713
 
 
 
